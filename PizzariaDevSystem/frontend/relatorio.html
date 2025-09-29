@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatórios - Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="page-relatorio">
+    <header>
+        <h1><a href="index.html">Pizzaria DevSystem</a> > Relatórios</h1>
+    </header>
+    <main class="report-container">
+        <div class="report-summary">
+            <div class="summary-card">
+                <h4>Faturamento Total</h4>
+                <p id="faturamento-total">R$ 0,00</p>
+            </div>
+            <div class="summary-card">
+                <h4>Total de Pedidos</h4>
+                <p id="total-pedidos">0</p>
+            </div>
+            <div class="summary-card">
+                <h4>Sabor Mais Pedido</h4>
+                <p id="sabor-popular">-</p>
+            </div>
+        </div>
+        <div class="chart-wrapper">
+            <div class="chart-container">
+                <h3>Sabores Mais Populares</h3>
+                <canvas id="saboresChart"></canvas>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
