@@ -7,14 +7,25 @@ import java.util.List;
 public class Pedido {
     private int id;
     private Cliente cliente;
-    private List<Pizza> pizzas;
+    private List<Pizza> pizzas = new ArrayList<>(); // Inicializa a lista aqui
     private double valorTotal;
+    private double distancia; // Nova propriedade para a distância
     private double frete;
+
+    // Construtor padrão (sem argumentos) necessário para a desserialização do JSON pelo Spring/Jackson
+    public Pedido() {
+    }
 
     public Pedido(int id, Cliente cliente) {
         this.id = id;
         this.cliente = cliente;
-        this.pizzas = new ArrayList<>();
+        this.distancia = 0.0; // Valor padrão
+    }
+
+    // Construtor adicional para facilitar a criação de pedidos com distância
+    public Pedido(int id, Cliente cliente, double distancia) {
+        this(id, cliente); // Chama o construtor existente
+        this.distancia = distancia;
         
     }
 
@@ -32,17 +43,24 @@ public class Pedido {
     public int getId() { return id; }
     public Cliente getCliente() { return cliente; }
     public List<Pizza> getPizzas() { return pizzas; }
+    public double getDistancia() { return distancia; }
     public double getValorTotal() { return valorTotal; }
     public double getFrete() { return frete; }
     public void setFrete(double frete) { this.frete = frete; }
 
-     // **** MÉTODO QUE PRECISA SER ADICIONADO ****
+    // Setters
     public void setId(int id) {
         this.id = id;
     }
 
-        // **** MÉTODO QUE TAMBÉM PRECISA EXISTIR ****
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
     public void setPizzas(List<Pizza> pizzas) {
         this.pizzas = pizzas;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

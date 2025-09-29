@@ -7,6 +7,10 @@ public class Cliente {
     private String endereco;
     private String telefone;
 
+    // Construtor padrão (vazio) necessário para o Jackson (desserialização de JSON)
+    public Cliente() {
+    }
+
     // Construtor usado pelo sistema para criar clientes com ID
     public Cliente(int id, String nome, String endereco, String telefone) {
         this.id = id;
@@ -30,5 +34,20 @@ public class Cliente {
 
     public String getTelefone() {
         return telefone;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }

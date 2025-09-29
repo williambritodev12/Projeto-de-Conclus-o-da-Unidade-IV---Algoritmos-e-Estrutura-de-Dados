@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@CrossOrigin // Permite que o frontend acesse este endpoint
+@CrossOrigin(origins = "*") // Permite que o frontend acesse este endpoint
 @RestController
 @RequestMapping("/api/relatorios")
 public class RelatorioController {

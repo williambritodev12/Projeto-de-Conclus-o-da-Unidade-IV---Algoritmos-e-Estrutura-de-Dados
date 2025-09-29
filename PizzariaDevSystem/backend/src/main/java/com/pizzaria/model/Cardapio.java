@@ -49,4 +49,16 @@ public class Cardapio {
 
         return precoTotal;
     }
+
+    public void adicionarSabor(String sabor, Double preco) {
+        this.cardapio.put(sabor, preco);
+    }
+
+    public boolean removerSabor(String sabor) {
+        if (cardapio.containsKey(sabor)) {
+            cardapio.remove(sabor);
+            return true;
+        }
+        return false;
+    }
 }
